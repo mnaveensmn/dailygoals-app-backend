@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS daily_goal;
+
+CREATE TABLE daily_goal (
+id INT AUTO_INCREMENT  PRIMARY KEY,
+goal VARCHAR(500) NOT NULL,
+pomodoro_count INT NOT NULL
+);
