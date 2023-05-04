@@ -18,5 +18,5 @@ public class DailyGoal {
     private String goal;
 
     @Column(name = "pomodoro_count")
-    private int pomCount;
+    private int pomodoroCount;
 }

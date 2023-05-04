@@ -2,7 +2,6 @@ package com.naveen.dailygoals.backend.controllers;
 
 import com.naveen.dailygoals.backend.models.DailyGoal;
 import com.naveen.dailygoals.backend.services.DailyGoalService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,7 +52,7 @@ public class DailyGoalController {
                 return new ResponseEntity<>("Id not found", HttpStatus.NOT_FOUND);
             }
             existingDailyGoal.setGoal(dailyGoal.getGoal() != null ? dailyGoal.getGoal() : existingDailyGoal.getGoal());
-            existingDailyGoal.setPomCount(dailyGoal.getPomCount());
+            existingDailyGoal.setPomodoroCount(dailyGoal.getPomodoroCount());
             dailyGoalService.saveDailyGoal(dailyGoal);
             return new ResponseEntity<>(existingDailyGoal, HttpStatus.OK);
         } catch (Exception e) {

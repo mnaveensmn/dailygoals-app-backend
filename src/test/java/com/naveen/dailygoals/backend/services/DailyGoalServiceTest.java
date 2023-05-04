@@ -20,4 +20,22 @@ public class DailyGoalServiceTest {
         List<DailyGoal> dailyGoals = dailyGoalService.getAllDailyGoals();
         Assertions.assertNotNull(dailyGoals);
     }
+
+    @Test
+    public void shouldReturnNullWhenIdNotFound() {
+        DailyGoal dailyGoals = dailyGoalService.getDailyGoalById(4L);
+        Assertions.assertNull(dailyGoals);
+    }
+
+//    @Test
+//    public void shouldReturnDailyGoalForGivenId() {
+//        List<DailyGoal> dailyGoals = dailyGoalService.getAllDailyGoals();
+//        Assertions.assertNotNull(dailyGoals);
+//    }
+//
+//    @Test
+//    public void shouldSaveGivenDailyGoal() {
+//        List<DailyGoal> dailyGoals = dailyGoalService.getAllDailyGoals();
+//        Assertions.assertNotNull(dailyGoals);
+//    }
 }
