@@ -28,10 +28,12 @@ public class DailyGoalServiceTest {
 
     @Test
     public void shouldReturnDailyGoalForGivenId() {
-        DailyGoal dailyGoal = dailyGoalService.getDailyGoalById(1L);
+        DailyGoal dailyGoal = dailyGoalService.getAllDailyGoals().get(0);
+
+        DailyGoal fetchedDailyGoal = dailyGoalService.getDailyGoalById(dailyGoal.getId());
         Assertions.assertNotNull(dailyGoal);
-        Assertions.assertEquals("Data Structure", dailyGoal.getGoal());
-        Assertions.assertEquals(2, 2);
+        Assertions.assertEquals(dailyGoal.getGoal(), fetchedDailyGoal.getGoal());
+        Assertions.assertEquals(dailyGoal.getPomodoroCount(), fetchedDailyGoal.getPomodoroCount());
     }
 
     @Test
