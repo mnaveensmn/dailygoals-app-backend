@@ -38,7 +38,7 @@ public class DailyGoalController {
     public ResponseEntity<Object> saveDailyGoal(@RequestBody DailyGoal dailyGoal) {
         try {
             dailyGoalService.saveDailyGoal(dailyGoal);
-            return new ResponseEntity<>(dailyGoal, HttpStatus.CREATED);
+            return new ResponseEntity<>("Saved successfully", HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error occurred while saving the data", HttpStatus.INTERNAL_SERVER_ERROR);
         }
