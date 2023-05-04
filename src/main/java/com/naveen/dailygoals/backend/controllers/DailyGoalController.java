@@ -63,11 +63,7 @@ public class DailyGoalController {
     @DeleteMapping("/goals/{id}")
     public ResponseEntity<String> deleteDailyGoalById(@PathVariable Long id) {
         try {
-            DailyGoal dailyGoal = dailyGoalService.getDailyGoalById(id);
-            if (dailyGoal == null) {
-                return new ResponseEntity<>("Id not found", HttpStatus.NOT_FOUND);
-            }
-            dailyGoalService.deleteDailyGoalById(dailyGoal);
+            dailyGoalService.deleteDailyGoalById(id);
             return new ResponseEntity<>("Successfully deleted the daily goal with the id " + id, HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             return new ResponseEntity<>("Error occurred while deleting the data", HttpStatus.INTERNAL_SERVER_ERROR);

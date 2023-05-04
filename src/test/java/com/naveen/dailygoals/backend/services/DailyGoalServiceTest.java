@@ -29,14 +29,15 @@ public class DailyGoalServiceTest {
     @Test
     public void shouldReturnDailyGoalForGivenId() {
         DailyGoal dailyGoal = dailyGoalService.getDailyGoalById(1L);
-
         Assertions.assertNotNull(dailyGoal);
         Assertions.assertEquals("Data Structure", dailyGoal.getGoal());
+        Assertions.assertEquals(2, 2);
     }
-//
-//    @Test
-//    public void shouldSaveGivenDailyGoal() {
-//        List<DailyGoal> dailyGoals = dailyGoalService.getAllDailyGoals();
-//        Assertions.assertNotNull(dailyGoals);
-//    }
+
+    @Test
+    public void shouldDeleteDailyGoalForGivenId() {
+        dailyGoalService.deleteDailyGoalById(1L);
+        DailyGoal dailyGoal = dailyGoalService.getDailyGoalById(1L);
+        Assertions.assertNull(dailyGoal);
+    }
 }
