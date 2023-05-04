@@ -12,8 +12,11 @@ import java.util.Optional;
 @Service
 public class DailyGoalService {
 
-    @Autowired
-    DailyGoalRepository dailyGoalRepository;
+    private final DailyGoalRepository dailyGoalRepository;
+
+    public DailyGoalService(DailyGoalRepository dailyGoalRepository) {
+        this.dailyGoalRepository = dailyGoalRepository;
+    }
 
     public List<DailyGoal> getAllDailyGoals() {
         return dailyGoalRepository.findAll();

@@ -8,13 +8,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 public class DailyGoalController {
 
-    @Autowired
-    private DailyGoalService dailyGoalService;
+
+    private final DailyGoalService dailyGoalService;
+
+    public DailyGoalController(DailyGoalService dailyGoalService) {
+        this.dailyGoalService = dailyGoalService;
+    }
+
 
     @GetMapping("/test")
     public String get() {
