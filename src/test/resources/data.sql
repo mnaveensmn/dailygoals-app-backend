@@ -1,3 +1,3 @@
-INSERT INTO daily_goal (id,goal,pomodoro_count) VALUES (1,'Data Structure', 2);
-INSERT INTO daily_goal (id,goal,pomodoro_count) VALUES (2,'SMN01', 2);
-INSERT INTO daily_goal (id,goal,pomodoro_count) VALUES (3,'Power reading', 2);
+INSERT INTO daily_goal (goal,pomodoro_count) VALUES ('Data Structure', 2);
+INSERT INTO daily_goal (goal,pomodoro_count) VALUES ('SMN01', 2);
+INSERT INTO daily_goal (goal,pomodoro_count) VALUES ('Power reading', 2);
