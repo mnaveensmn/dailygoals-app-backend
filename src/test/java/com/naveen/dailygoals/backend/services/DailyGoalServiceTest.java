@@ -40,4 +40,26 @@ public class DailyGoalServiceTest {
         DailyGoal dailyGoal = dailyGoalService.getDailyGoalById(1L);
         Assertions.assertNull(dailyGoal);
     }
+
+    @Test
+    public void shouldSaveGivenDailyGoal() {
+        truncateTable();
+        DailyGoal dailyGoal = new DailyGoal();
+        dailyGoal.setGoal("Test Goal");
+        dailyGoal.setPomodoroCount(10);
+
+        dailyGoalService.saveDailyGoal(dailyGoal);
+
+        DailyGoal savedDailyGoal = dailyGoalService.getDailyGoalById(1L);
+
+        Assertions.assertNull(savedDailyGoal);
+        Assertions.assertEquals("Test Goal",dailyGoal.getGoal());
+        Assertions.assertEquals(10,dailyGoal.getPomodoroCount());
+    }
+
+    private void truncateTable() {
+        for (DailyGoal dailyGoal: dailyGoalService.getAllDailyGoals()) {
+            dailyGoalService.deleteDailyGoalById(dailyGoal.getId());
+        }
+    }
 }
